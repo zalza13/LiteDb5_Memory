@@ -1,10 +1,8 @@
 ﻿using LiteDB.Engine.Disk;
-using System;
+using LiteDB5;
+using LiteDB5.Engine;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using static LiteDB.Constants;
+using static LiteDB5.Constants;
 
 namespace LiteDB.Engine
 {
@@ -13,7 +11,7 @@ namespace LiteDB.Engine
     /// Do not share same memory store with different files
     /// [ThreadSafe]
     /// </summary>
-    internal class MemoryCacheV2 : IDisposable
+    public class MemoryCacheV2 : IDisposable
     {
         /// <summary>
         /// Contains free ready-to-use pages in memory
